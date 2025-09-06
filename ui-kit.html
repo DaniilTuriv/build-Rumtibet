@@ -10,15 +10,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.min.css">
+    <link rel="stylesheet" href="./assets/css/nice-select2.css">
+    <link rel="stylesheet" href="./assets/css/hamburgers.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h2>Header</h2>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="header__logo">
+            <img src="./assets/img/logo.svg" alt="logo">
+        </a>
+            <button class="hamburger hamburger--spin" type="button">
+                <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            <div class="header__mobile-container">
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item"><a href="#" class="header__nav-link"><svg><use href="#icon-arrow-right"></use></svg>Главная</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__nav-link"><svg><use href="#icon-arrow-right"></use></svg>Про гида</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__nav-link"><svg><use href="#icon-arrow-right"></use></svg>Программа тура</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__nav-link"><svg><use href="#icon-arrow-right"></use></svg>Стоимость</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__nav-link"><svg><use href="#icon-arrow-right"></use></svg>Блог</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__nav-link"><svg><use href="#icon-arrow-right"></use></svg>Контакты</a></li>
+                    </ul>
+                </nav>
+                <button type="button" class="btn btn_primary">Консультация</button>
+            </div>
+        </div>
     </header>
     <main>
         <div class="ui-grid">
@@ -28,44 +52,44 @@
                     <li class="ui-item">
                         <figure>
                             <div style="width: 150px; height: 150px; background-color: #1A3E3E; border: 1px solid;"></div>
-                            <figurecaption>$primary-color: #1A3E3E;</figurecaption>
+                            <figcaption>$primary-color: #1A3E3E;</figcaption>
                         </figure>
                     </li>
                     <li class="ui-item">
                         <figure>
                             <div style="width: 150px; height: 150px; background-color: #F3F5F4; border: 1px solid;"></div>
-                            <figurecaption>$bg-color: #F3F5F4;</figurecaption>
+                            <figcaption>$bg-color: #F3F5F4;</figcaption>
                         </figure>
                     </li>
                     <li class="ui-item">
                         <figure>
                             <div style="width: 150px; height: 150px; background-color: #F2BE22; border: 1px solid;"></div>
-                            <figurecaption>$text-accent-color: #F2BE22;</figurecaption>
+                            <figcaption>$text-accent-color: #F2BE22;</figcaption>
                         </figure>
                     </li>
                     <li class="ui-item">
                         <figure>
                             <div style="width: 150px; height: 150px; background-color: #ffffff; border: 1px solid;"></div>
-                            <figurecaption>$bg-accent-color: #ffffff;</figurecaption>
+                            <figcaption>$bg-accent-color: #ffffff;</figcaption>
                         </figure>
                     </li>
                     <li class="ui-item">
                         <figure>
                             <div style="width: 150px; height: 150px; background-color: #FDFDFD; border: 1px solid;"></div>
-                            <figurecaption>$brand-light-color: #FDFDFD;</figurecaption>
+                            <figcaption>$brand-light-color: #FDFDFD;</figcaption>
                         </figure>
                     </li>
                     <li class="ui-item">
                         <figure>
                             <div style="width: 150px; height: 150px; background-color: #18121E; border: 1px solid;"></div>
-                            <figurecaption>$barnd-dark-color: #18121E;</figurecaption>
+                            <figcaption>$barnd-dark-color: #18121E;</figcaption>
                         </figure>
                     </li>
                 </ul>
             </div>
             <div class="ui-item">
                 <h4>text color, font bold, font italic, link, ::selection</h4>
-                <p>Lorem ipsum, <strong>dolor sit amet</strong> consectetur <b>adipisicing</b> elit. Fuga <i>nam voluptatum error</i> mollitia cupiditate <em>inventore hic</em> minima laboriosam! Numquam, modi.</p>
+                <p>Lorem ipsum, <strong>dolor sit amet</strong> consectetur <b>adipisicing</b> elit. Fuga <i>nam voluptatum error</i> mollitia cupiditate <em>inventore hic</em> minima laboriosam! Numqlocationm, modi.</p>
                 <p>Lorem <a href="#">ipsum dolor</a> sit amet consectetur adipisicing elit. Veniam, quidem?</p>
             </div>
             <div class="ui-item">
@@ -95,23 +119,55 @@
                 <h6>Lorem ipsum dolor sit.</h6>
             </div>
             <div class="ui-item" style="background: url(./assets/img/banner.png) center / cover;">
-                <h4>inputs</h4>
+                <h4>inputs, selects</h4>
                 <form style="padding: 48px; border-radius: 10px; backdrop-filter: blur(6px); background-color: #ffffff33;">
                     <div class="input-box">
                         <input type="text" placeholder="Дата похода" class="date-input" id="calendar">
-                        <label for="calendar">
+                        <label for="calendar" class="label-icon">
                             <svg>
                                 <use href="#icon-date"></use>
                             </svg>
                         </label>
+                        <label for="calendar">выберите дату поххода</label>
+                    </div>
+                    <div class="input-box">
+                        <select name="locations" id="location-select">
+                            <option value="kyiv">Киев</option>
+                            <option value="lviv">Львов</option>
+                            <option value="odesa">Одеса</option>
+                            <option value="dnepr">Днепр</option>
+                            <option value="kharkov">Харьков</option>
+                            <option value="kherson">Херсон</option>
+                            <option value="sumi">Сумы</option>
+                            <option value="carpatians">Карпаты</option>
+                            <option value="uzhhorod">Ужгород</option>
+                        </select>
+                        <label for="location-select">выберите из списка</label>
+                    </div>
+                    <div class="input-box">
+                        <select name="members" id="member-select">
+                            <option value="4">4 человека</option>
+                            <option value="5">5 человек</option>
+                            <option value="6">6 человек</option>
+                            <option value="7">7 человек</option>
+                            <option value="8">8 человек</option>
+                            <option value="9">9 человек</option>
+                            <option value="more">больше 10 человек</option>
+                        </select>
+                        <label for="member-select">минимум 4 участника</label>
                     </div>
                 </form>
             </div>
-            <div class="ui-item">
-                <h4>selects</h4>
-            </div>
-            <div class="ui-item">
+            <div class="ui-item" style="background-color: #b89191;">
                 <h4>buttons</h4>
+                <a href="#" class="btn btn_primary">Консультация</a>
+                <button type="button" class="btn btn_primary">Консультация</button>
+                <br>
+                <a href="#" class="btn btn_primary btn-lg">Консультация</a>
+                <button type="button" class="btn btn_primary btn-lg">Консультация</button>
+                <br>
+                <a href="#" class="btn btn_secondary">Консультация</a>
+                <button type="button" class="btn btn_secondary">Консультация</button>
             </div>
         </div>
     </main>
@@ -129,9 +185,9 @@
 
     </style>
     <footer>
-        <h4>Footer</h4>
+        <h2>Footer</h2>
     </footer>
-    <svg>
+    <svg class="d-none">
         <symbol id="icon-date" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1_196)">
                 <path d="M16.3125 18H1.6875C0.75375 18 0 17.2463 0 16.3125V2.8125C0 1.87875 0.75375 1.125 1.6875 1.125H16.3125C17.2463 1.125 18 1.87875 18 2.8125V16.3125C18 17.2463 17.2463 18 16.3125 18ZM1.6875 2.25C1.3725 2.25 1.125 2.4975 1.125 2.8125V16.3125C1.125 16.6275 1.3725 16.875 1.6875 16.875H16.3125C16.6275 16.875 16.875 16.6275 16.875 16.3125V2.8125C16.875 2.4975 16.6275 2.25 16.3125 2.25H1.6875Z" fill="currentColor" />
@@ -144,9 +200,15 @@
             </defs>
         </symbol>
     </svg>
+    <svg class="d-none">
+        <symbol id="icon-arrow-right" width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor" />
+        </symbol>
+    </svg>
     <a href="ui-kit.html" style="font-size: 18px; font-weight: 600; text-decoration: none; border-radius: 10px; padding: 8px 12px; color: #ffffff; background-color: #0000ff; left: 18px; position: fixed; bottom: 20px;">ui-kit</a>
     <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.min.js"></script>
-    <script async src="./assets/js/custom.js"></script>
+    <script src="assets/js/nice-select2.js"></script>
+    <script async src="assets/js/custom.js"></script>
 </body>
 
 </html>
