@@ -5,6 +5,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("./assets/fonts/NunitoSans.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 *,
 *::before,
 *::after {
@@ -25,7 +32,7 @@ body {
   font-size: 16px;
   background: #F3F5F4;
   color: #18121E;
-  font-family: "Nunito Sans, sans-serif";
+  font-family: "Nunito Sans", sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -34,21 +41,23 @@ button {
   cursor: pointer;
 }
 
+a,
 input,
 button,
 textarea,
 select {
-  font-family: "Nunito Sans, sans-serif";
+  font-family: "Nunito Sans", sans-serif;
 }
 
 input {
-  padding: 16px 16px;
+  padding: 13px 16px;
   border: 1px solid #e1e3e4;
   border-radius: 8px;
   background: transparent;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
+  width: 270px;
 }
 input::placeholder {
   color: #FDFDFD;
@@ -159,6 +168,7 @@ footer {
 
 .container {
   max-width: 1204px;
+  width: 100%;
   padding-left: 12px;
   padding-right: 12px;
   margin-left: auto;
@@ -169,7 +179,7 @@ footer {
   font-weight: 600;
   line-height: 1;
   border-radius: 4px;
-  padding: 13px 26px;
+  padding: 13px 24px;
   border: 1px solid transparent;
   display: inline-block;
   transition: 0.5s;
@@ -187,8 +197,8 @@ footer {
   color: #1A3E3E;
   border-color: #1A3E3E;
 }
-.btn.btn-lg {
-  padding: 17px 38.8px;
+.btn.btn_lg {
+  padding: 17px 37px;
 }
 .btn.btn_secondary {
   border-color: #FDFDFD;
@@ -205,14 +215,18 @@ footer {
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
 }
 .input-box label {
   cursor: pointer;
+  font-size: 12px;
+  padding: 9px 0 0 10px;
 }
 .input-box label.label-icon {
   position: absolute;
-  top: 18px;
-  right: 20px;
+  top: 17px;
+  right: 15px;
+  padding: 0;
 }
 .input-box:hover .date-input::placeholder {
   color: #F2BE22;
@@ -223,21 +237,23 @@ footer {
 
 .nice-select {
   color: #fdfdfd;
-  height: 58px;
+  height: 52px;
   padding: 0 36px 0 16px;
   border: 1px solid #e1e3e4;
   border-radius: 8px;
   background: transparent;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 58px;
+  font-size: 14px;
+  line-height: 52px;
+  width: 100%;
+  max-width: 270px;
 }
 .nice-select:after {
   border-bottom: 2px solid #fdfdfd;
   border-right: 2px solid #fdfdfd;
   height: 11px;
   margin-top: -8px;
-  right: 16px;
+  right: 19px;
   width: 11px;
 }
 .nice-select .nice-select-dropdown {
@@ -258,7 +274,8 @@ footer {
   overflow: hidden;
 }
 
-.d-none {
+.d-none,
+.hidden-select {
   display: none;
 }
 
@@ -281,6 +298,7 @@ footer {
 }
 .header__mobile-container {
   display: flex;
+  align-items: center;
   gap: 38px;
 }
 .header__mobile-container.show {
@@ -293,6 +311,9 @@ footer {
   color: #FDFDFD;
   display: inline-block;
   padding: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.14px;
 }
 .header__nav-link:hover {
   text-decoration: none;
@@ -320,8 +341,32 @@ footer {
 }
 
 .first-screen {
-  min-height: 985px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 82px;
+  height: max(100vh, 985px);
+  height: 100vh;
+  max-height: 985px;
   background: url(./assets/img/banner.png) center/cover no-repeat;
+  letter-spacing: 1px;
+}
+.first-screen__title {
+  color: #FDFDFD;
+  font-family: "Next-ART";
+  font-weight: 700;
+  margin-bottom: 41px;
+}
+.first-screen__form {
+  display: flex;
+  align-items: start;
+  gap: 24px;
+  padding: 39px 42px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.first-screen .input-box:last-child {
+  max-width: 213px;
 }
 
 @media (min-width: 1025px) {
