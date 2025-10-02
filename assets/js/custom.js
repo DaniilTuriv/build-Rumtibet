@@ -26,6 +26,18 @@ if (document.querySelector('select')) {
         searchtext: 'zoek',
         selectedtext: 'geselecteerd'
     });
+    NiceSelect.bind(document.getElementById("modal-location-select"), {
+        searchable: true,
+        placeholder: 'Локация для тура',
+        searchtext: 'zoek',
+        selectedtext: 'geselecteerd'
+    });
+    NiceSelect.bind(document.getElementById("modal-member-select"), {
+        searchable: false,
+        placeholder: 'Участники',
+        searchtext: 'zoek',
+        selectedtext: 'geselecteerd'
+    });
 }
 
 const forEach = function(t, o, r) {
@@ -48,16 +60,3 @@ if (hamburgers.length > 0) {
         }, false);
     });
 }
-
-const showModalBtn = document.querySelector('#show-program')
-const closeModal = document.querySelector('#close-modal')
-
-showModalBtn.addEventListener("click", () => {
-    body.classList.toggle("overflow-hidden");
-    body.classList.toggle("overlay");
-});
-
-closeModal.addEventListener("click", () => {
-    body.classList.toggle("overflow-hidden");
-    body.classList.toggle("overlay");
-});
