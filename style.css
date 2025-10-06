@@ -49,7 +49,7 @@ select {
   font-family: "Nunito Sans", sans-serif;
 }
 
-input {
+input, textarea {
   padding: 13px 16px;
   border: 1px solid #e1e3e4;
   border-radius: 8px;
@@ -60,8 +60,17 @@ input {
   max-width: 270px;
   width: 100%;
 }
-input::placeholder {
+input::placeholder, textarea::placeholder {
   color: #FDFDFD;
+}
+
+textarea {
+  max-height: 240px;
+  min-height: 128px;
+}
+
+input:not(.date-input)::placeholder, textarea:not(.date-input)::placeholder {
+  font-weight: 300;
 }
 
 label {
@@ -258,14 +267,17 @@ footer {
 }
 .input-box label {
   cursor: pointer;
-  font-size: 12px;
-  padding: 9px 0 0 10px;
+  font-size: 14px;
+  padding: 0 0 0 10px;
 }
 .input-box label.label-icon {
   position: absolute;
   top: 17px;
   right: 15px;
   padding: 0;
+}
+.input-box .date-input {
+  color: #FDFDFD;
 }
 .input-box:hover .date-input::placeholder {
   color: #F2BE22;
@@ -282,7 +294,7 @@ footer {
   border-radius: 8px;
   background: transparent;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 52px;
   width: 100%;
   max-width: 270px;
@@ -296,8 +308,7 @@ footer {
   width: 11px;
 }
 .nice-select .nice-select-dropdown {
-  background-color: rgba(255, 255, 255, 0.1882352941);
-  backdrop-filter: blur(6px);
+  background-color: #1A3E3E;
 }
 .nice-select .option:hover,
 .nice-select .option.focus,
@@ -407,10 +418,13 @@ footer {
   display: flex;
   align-items: start;
   gap: 24px;
-  padding: 42px 42px;
+  padding: 39px 42px;
   border-radius: 10px;
   backdrop-filter: blur(6px);
   background-color: rgba(255, 255, 255, 0.2);
+}
+.first-screen .input-box label:not(.label-icon) {
+  padding-top: 9px;
 }
 .first-screen .input-box:last-child {
   max-width: 213px;
@@ -582,30 +596,57 @@ footer {
 }
 
 .modal {
+  background-color: rgba(255, 255, 255, 0.1882352941);
+  backdrop-filter: blur(6px);
   position: fixed;
   inset: 0;
   z-index: -10;
   opacity: 0;
   transition: opacity 0.5s, z-index 0.5s;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(6px);
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .modal.show {
   opacity: 1;
   z-index: 20;
 }
 .modal .nice-select,
-.modal input {
+.modal input,
+.modal textarea {
   max-width: 100%;
 }
 .modal-body {
   max-width: 450px;
 }
 
-#close-modal {
+.modal-template.show {
+  background-color: rgba(133, 188, 255, 0.5019607843);
+}
+.modal-template__title, .modal-template__subtitle {
+  color: #1A3E3E;
+}
+.modal-template .input-box input,
+.modal-template .input-box textarea {
+  color: #18121E;
+}
+
+.template-form-wrapper {
+  background-color: rgba(255, 255, 255, 0.1882352941);
+  backdrop-filter: blur(6px);
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  padding: 36px 36px 48px;
+}
+
+.template-form {
+  display: grid;
+  gap: 24px;
+}
+
+.close-modal {
   border: none;
   background-color: transparent;
   position: absolute;
@@ -614,7 +655,7 @@ footer {
   z-index: 10;
   transition: opacity 0.5s, transform 0.3s;
 }
-#close-modal:hover {
+.close-modal:hover {
   transform: rotate(180deg);
 }
 
