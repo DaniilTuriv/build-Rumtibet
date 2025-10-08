@@ -82,7 +82,7 @@
                         <label for="member-select">минимум 4 человека</label>
                     </div>
                     <div class="input-box">
-                        <button type="button" class="btn btn_secondary btn_lg" data-triger-modal="request">Оставить заявку</button>
+                        <button type="button" class="btn btn_secondary btn_lg" data-triger-modal="request" id="triger-request">Оставить заявку</button>
                     </div>
                 </form>
                 <button type="button" class="btn btn_secondary btn_lg" data-triger-modal="show-program">Найти программу</button>
@@ -260,11 +260,7 @@
                         <input type="email" inputmode="email" name="e-mail" id="request-e-mail" placeholder="Введите ваш почтовый адрес">
                     </div>
                     <div class="input-box">
-                        <textarea name="letter" id="request-letter" placeholder="Сопроводительное письмо">
-Локация: Киев.
-Дата похода: 02.10.2025.
-7 человек.
-                    </textarea>
+                        <textarea name="letter" id="request-data" placeholder="Сопроводительное письмо"></textarea>
                     </div>
                     <div class="input-box">
                         <button type="submit" class="btn btn_secondary btn_lg">Отправить</button>
@@ -361,6 +357,7 @@
     <script src="https://unpkg.com/imask"></script>
     <script async src="assets/js/custom.js"></script>
     <script async src="assets/js/modal.js"></script>
+    <script async src="assets/js/request.js"></script>
 </body>
 
 </html>
