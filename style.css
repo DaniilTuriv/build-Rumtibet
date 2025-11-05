@@ -272,6 +272,7 @@ button[disabled] {
   width: 100%;
 }
 .input-box label {
+  position: relative;
   cursor: pointer;
   font-size: 14px;
   padding: 0 0 0 10px;
@@ -423,7 +424,6 @@ button[disabled] {
 .first-screen-form {
   display: flex;
   align-items: start;
-  gap: 24px;
   padding: 39px 42px;
   border-radius: 10px;
   backdrop-filter: blur(6px);
@@ -673,6 +673,7 @@ button[disabled] {
 
 .steps__nav_show {
   display: grid;
+  margin-bottom: 24px;
 }
 
 .steps__first-step,
@@ -721,6 +722,14 @@ button[disabled] {
   border-color: rgba(0, 255, 0, 0.1882352941);
   box-shadow: 0 0 15px -1px rgba(27, 222, 27, 0.8156862745);
   transition: box-shadow 0.3s, background-color 1s, border-color 1s;
+}
+
+.input-box label:not(.label-icon):before {
+  content: "*";
+  position: absolute;
+  color: #F2BE22;
+  top: 0;
+  left: 0;
 }
 
 @media (min-width: 1025px) {
