@@ -272,7 +272,6 @@ button[disabled] {
   width: 100%;
 }
 .input-box label {
-  position: relative;
   cursor: pointer;
   font-size: 14px;
   padding: 0 0 0 10px;
@@ -280,8 +279,11 @@ button[disabled] {
 .input-box label.label-icon {
   position: absolute;
   top: 17px;
-  right: 15px;
+  right: 42px;
   padding: 0;
+}
+.input-box label.label-icon_mobile {
+  right: 16px;
 }
 .input-box .date-input {
   color: #FDFDFD;
@@ -724,7 +726,10 @@ button[disabled] {
   transition: box-shadow 0.3s, background-color 1s, border-color 1s;
 }
 
-.input-box label:not(.label-icon):before {
+[data-required-field] ~ label {
+  position: relative;
+}
+[data-required-field] ~ label:not(.label-icon):before {
   content: "*";
   position: absolute;
   color: #F2BE22;
