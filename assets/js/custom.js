@@ -84,8 +84,8 @@ const swiper = new Swiper('.swiper', {
   loop: true,
   slidesPerView: 3,
   spaceBetween: 20,
-//   speed: 1000,
-//   autoplay: {
-//     delay: 3000
-//   },
+  speed: 1000,
+  autoplay: {
+    delay: 5000
+  },
 });
