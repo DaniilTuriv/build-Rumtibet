@@ -352,6 +352,35 @@ button[disabled] {
   color: #F2BE22;
 }
 
+.simplebar-scrollbar::before {
+  background-color: #1A3E3E;
+}
+
+.slider-nav {
+  position: relative;
+  margin: 0 auto;
+  padding: 24px;
+  max-width: 240px;
+  display: flex;
+  align-items: center;
+}
+.slider-nav .swiper-pagination {
+  position: relative;
+  bottom: 50%;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #1A3E3E;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #1A3E3E;
+  height: 36px;
+  margin-top: 0;
+  top: auto;
+}
+
 .header {
   margin-bottom: -104px;
   padding: 16px 0;
@@ -608,6 +637,10 @@ button[disabled] {
   text-align: center;
 }
 
+.swiper_popular {
+  border-radius: 32px;
+}
+
 .swiper-slide_popular {
   border-radius: 32px;
   height: 500px;
@@ -615,11 +648,19 @@ button[disabled] {
 }
 .swiper-slide_popular:hover .popular-info {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.swiper-slide_popular:hover .popular-info__title, .swiper-slide_popular:hover .popular-info__subtitle {
+  -webkit-line-clamp: initial;
+}
+.swiper-slide_popular:hover .popular-info__description {
+  display: block;
 }
 .swiper-slide_popular:hover .popular-rating {
   opacity: 0;
 }
-.swiper-slide_popular:hover .popular-info__description {
+.swiper-slide_popular:hover .btn {
   display: block;
 }
 
@@ -659,6 +700,7 @@ button[disabled] {
 }
 
 .popular-info {
+  --text-padding: 98px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -669,17 +711,18 @@ button[disabled] {
   transition: height 0.5s;
 }
 .popular-info__title {
-  margin-bottom: 0;
-  color: #FDFDFD;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
+  margin-bottom: 0;
+  padding-right: var(--text-padding);
 }
 .popular-info__subtitle {
-  color: #FDFDFD;
   font-size: 14px;
   font-weight: 400;
+  line-height: 1.28;
   margin-bottom: 38px;
+  padding-right: var(--text-padding);
 }
 .popular-info__price {
   position: absolute;
@@ -692,6 +735,7 @@ button[disabled] {
   padding: 8px 16px;
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.3019607843);
+  font-size: 20px;
   color: #FDFDFD;
 }
 .popular-info__description {
@@ -700,7 +744,21 @@ button[disabled] {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  margin-bottom: 105px;
+  padding-right: 12px;
+}
+.popular-info .btn {
+  display: none;
+  margin-top: auto;
+}
+
+.popular-info__title,
+.popular-info__subtitle {
+  color: #FDFDFD;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
 }
 
 .modal {
@@ -856,6 +914,9 @@ button[disabled] {
   .about__container {
     gap: 72px;
   }
+  .popular-info__subtitle {
+    margin-bottom: 28px;
+  }
 }
 @media screen and (max-width: 1024px) {
   .header {
@@ -1008,6 +1069,71 @@ button[disabled] {
   .offers-advanteges {
     gap: 32px;
     margin-bottom: 32px;
+  }
+  .swiper_popular {
+    max-width: 680px;
+  }
+  .swiper-slide_popular {
+    height: 450px;
+  }
+  .popular-info {
+    height: 86px;
+  }
+  .popular-info__title {
+    font-size: 22px;
+  }
+  .popular-info__subtitle {
+    margin-bottom: 26px;
+  }
+  .popular-info__price {
+    font-size: 18px;
+    top: 20px;
+  }
+  .popular-info__description {
+    --description-height: 215px;
+    max-height: var(--description-height);
+  }
+}
+@media screen and (max-width: 767px) {
+  .popular-info__title {
+    font-size: 20px;
+    --text-padding: 86px;
+  }
+  .popular-info__subtitle {
+    --text-padding: 86px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .swiper_popular {
+    max-width: 285px;
+  }
+  .swiper-slide_popular {
+    height: 400px;
+  }
+  .popular-info {
+    height: 70px;
+    padding: 20px 24px;
+  }
+  .popular-info__title {
+    --text-padding: 88px;
+    font-size: 18px;
+  }
+  .popular-info__subtitle {
+    --text-padding: 88px;
+    margin-bottom: 18px;
+  }
+  .popular-info__price {
+    font-size: 16px;
+    padding: 6px 12px;
+    width: 67px;
+    height: 30px;
+  }
+  .popular-info__description {
+    font-size: 14px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    height: 30px;
   }
 }
 /*# sourceMappingURL=style.css.map */
